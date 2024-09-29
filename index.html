@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>its_r3mo</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link  rel="icon" type="image/x-icon" href="images/favicon1.ico" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-gem"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>Omer Olloumou</h1>
+								<p>Software Engineer</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#intro">Intro</a></li>
+								<li><a href="#work">Work</a></li>
+								<li><a href="#Education">Education</a></li>
+								<li><a href="#contact">Contact</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Intro -->
+							<article id="intro">
+								<h2 class="major">Intro</h2>
+								<span class="image main"><img src="images/pic06.jpg" alt="self portrait" /></span>
+								<p>HBCU graduate and entry level Software engineer.</p>
+							</article>
+
+						<!-- Work -->
+							<article id="work">
+								<h2 class="major">Work</h2>
+								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+								<p>Entry level Software Engineer</p>
+							</article>
+
+						<!-- About -->
+							<article id="Education">
+								<h2 class="major">About</h2>
+								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+								<p>Graduate from Morgan state unniversity.</p>
+							</article>
+
+						<!-- Contact -->
+							<article id="contact">
+								<h2 class="major">Contact</h2>
+								<form name="to-google-sheet">
+									<div class="fields">
+										<div class="field half">
+											<label for="Name">Name</label>
+											<input type="text" name="Name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="Email">Email</label>
+											<input type="text" name="Email" id="email" />
+										</div>
+										<div class="field">
+											<label for="Message">Message</label>
+											<textarea name="Message" id="message" rows="4"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+									</ul>
+								</form>
+								<span id="msg"></span>
+								<ul class="icons">
+									<li><a href="https://twitter.com/its_r3mo" class="icon brands alt fa-twitter"><span class="label">X</span></a></li>
+									<li><a href="https://www.instagram.com/its_r3mo/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="https://github.com/Remo24-237" class="icon brands alt fa-github"><span class="label">Instagram</span></a></li>
+								</ul>
+							</article>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; 2024. Edited Design: its_r3mo.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+		<script>
+			const scriptURL = "https://script.google.com/macros/s/AKfycby_YLDzbQ6xT1O5uZo8T0qGACbo2UhcqAf5Qx-4_jQNU_XLG06lUSXEE1BXsXpJEQtT/exec"
+			const form = document.forms["to-google-sheet"]
+			const msg = document.getElementById("msg")
+	  
+			form.addEventListener("submit", e => {
+				  e.preventDefault()
+					  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+						.then(response => {
+							msg.innerHTML = "Message sent successfully"
+							setTimeout(function(){
+								msg.innerHTML = ""
+								},2000)
+								form.reset()
+						})
+						.catch(error => console.error('Error!', error.message))
+				})
+		  </script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
